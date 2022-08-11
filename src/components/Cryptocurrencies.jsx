@@ -12,13 +12,9 @@ const Cryptocurrencies = ({simplified}) => {
     const [cryptos, setCryptos] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
-    // setCryptos(cryptosList?.data?.coins)
-
     useEffect(() => {
-        // setCryptos(cryptosList?.data?.coins);
         const filteredData = cryptosList?.data?.coins.filter ((coin) => coin.name.toLowerCase().includes(searchTerm.toLocaleLowerCase()))
         setCryptos(filteredData);
-        console.log('entra')
 
     }, [cryptosList, searchTerm])
 
