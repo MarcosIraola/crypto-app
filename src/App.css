@@ -63,8 +63,13 @@ a:hover{
     right: 10px !important;
     top: 25px !important;
     font-size: 1.2rem !important;
-    background-color: var(--bgSecondary) !important;
+    background-color: transparent !important;
     border: none !important;
+    margin-right: 10px;
+}
+
+.anticon-menu svg {
+    fill: white !important;
 }
 
 .loader{
@@ -114,7 +119,7 @@ a:hover{
         position:fixed;
         width: 100%;
         z-index: 100;
-        background-color: var(--bgSecondary);
+        background-color: #001529;
     }
   
     .menu-control-container{
