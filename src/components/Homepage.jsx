@@ -25,7 +25,7 @@ const Homepage = () => {
         />
     );
 
-    if(isFetching) return <Spin indicator={antIcon} />;
+    if(isFetching) return <div className='spin-container'><Spin indicator={antIcon} size='large' /></div>;
 
     return (
         <div>

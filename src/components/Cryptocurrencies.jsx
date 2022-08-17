@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import millify from 'millify'
 import { Link } from 'react-router-dom'
-import { Card, Row, Col, Input } from 'antd'
+import { Card, Row, Col, Input, Spin } from 'antd'
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { useGetCryptosQuery } from '../services/cryptoApi'
 
@@ -18,7 +19,16 @@ const Cryptocurrencies = ({simplified}) => {
 
     }, [cryptosList, searchTerm])
 
-    if(isFetching) return 'Loading...'
+    const antIcon = (
+        <LoadingOutlined
+            style={{
+                fontSize: 30,
+            }}
+            spin
+        />
+    );
+
+    if(isFetching) return <div className='spin-container'><Spin indicator={antIcon} size='large' /></div>;
 
     return (
         <div>

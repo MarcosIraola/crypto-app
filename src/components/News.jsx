@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
+import { Select, Typography, Row, Col, Avatar, Card, Spin } from 'antd'
 import moment from 'moment'
 import { useGetCryptosQuery } from '../services/cryptoApi'
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi'
+import { LoadingOutlined } from '@ant-design/icons';
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -14,7 +15,16 @@ const News = ({ simplified }) => {
     const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
     const { data } = useGetCryptosQuery(100);
 
-    if(!cryptoNews?.value) return 'Loading..'
+    const antIcon = (
+        <LoadingOutlined
+            style={{
+                fontSize: 30,
+            }}
+            spin
+        />
+    );
+
+    if(!cryptoNews?.value) return <div className='spin-container'><Spin indicator={antIcon} size='large' /></div>;
 
     return (
         <div>

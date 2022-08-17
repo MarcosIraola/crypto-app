@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import HTMLReactParser from 'html-react-parser'
 import  {useParams} from 'react-router-dom'
 import millify from 'millify'
-import { Col, Row, Typography, Select } from 'antd';
-import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons'; 
+import { Col, Row, Typography, Select, Spin } from 'antd';
+import { LoadingOutlined, MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons'; 
 
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi'
 import LineChart from './LineChart';
@@ -18,7 +18,16 @@ const CryptoDetails = () => {
     const { data: coinHistory } = useGetCryptoHistoryQuery({coinId, timePeriod });
     const cryptoDetails = data?.data?.coin;
 
-    if(isFetching) return 'Loading...'
+    const antIcon = (
+        <LoadingOutlined
+            style={{
+                fontSize: 30,
+            }}
+            spin
+        />
+    );
+
+    if(isFetching) return  <div className='spin-container'><Spin indicator={antIcon} size='large' /></div>;
 
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
