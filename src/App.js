@@ -26,7 +26,7 @@ const App = () => {
                 <div className='footer'>
                     <Typography.Title level={5} style={{color: 'white', textAlign: 'center'}}>
                         Cryptoapp <br />
-                        All rights reserved
+                        YOLO
                     </Typography.Title>
                     <Space>
                         <Link to='/'>Home</Link>
