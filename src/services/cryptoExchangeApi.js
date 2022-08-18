@@ -14,11 +14,14 @@ export const cryptoExchangeApi = createApi({
     endpoints: (builder) => ({
         getExchanges: builder.query({
             query: () => createRequest(`/exchanges`),
-            
+        }),
+        getExchangesAssets: builder.query({
+            query: () => createRequest(`/exchanges/icons/small`),
         }),
     })
 });
 
 export const {
     useGetExchangesQuery,
+    useGetExchangesAssetsQuery
 } = cryptoExchangeApi;

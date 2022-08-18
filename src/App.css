@@ -412,6 +412,11 @@ width: 70%;
     width: 200px !important;
     margin-top: 20px !important;
 }
+.exchange-logo {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+}
 
 .footer {
     background-color: #001529;
