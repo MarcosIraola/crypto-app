@@ -34,6 +34,31 @@ a:hover{
     /* min-height: 100px; */
 }
 
+.notFound-container {
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.notFound-link {
+    width: 200px;
+    margin: 0 auto;
+    color: #1890ff;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.notFound-link:hover {
+    color: #1476d3;
+}
+
 .navbar{
     flex: 0.2;
     background-color: rgb(0, 21, 41);
