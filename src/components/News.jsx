@@ -11,7 +11,7 @@ const { Option } = Select;
 const demoImageUrl = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News'
 
 const News = ({ simplified }) => {
-    const [newsCategory, setNewsCategory] = useState('All')
+    const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
     const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
     const { data } = useGetCryptosQuery(100);
 

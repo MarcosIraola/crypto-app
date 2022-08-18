@@ -34,7 +34,7 @@ const Exchanges = () => {
                 <Input placeholder='Search exchange' onChange={(e) => setSearchTerm(e.target.value)}/>
             </div>
 
-            {exchanges.length < 1 ? <p>No matches. Try another</p> : ''}
+            {exchanges?.length < 1 ? <p>No matches. Try another</p> : ''}
 
             {exchanges?.map((exchange, index) => (
                 <Collapse accordion>
