@@ -27,8 +27,11 @@ const Homepage = () => {
 
     if(isFetching) return <div className='spin-container'><Spin indicator={antIcon} size='large' /></div>;
 
+    console.log(process.env)
+
     return (
         <div>
+            <span>{process.env.REACT_APP_RAPIDAPI_KEY}</span>
             <Title level={2} className='heading'>Global Crypto Stats</Title>
             <Row>
                 <Col span={12}>
